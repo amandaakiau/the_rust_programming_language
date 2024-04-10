@@ -30,7 +30,14 @@ fn main() {
         assim como as variáveis, as referencias por padrão são imutáveis, por isso pra indicar que é mutável deve escrever &mut
         */
         .read_line(&mut guess)
+
+        /*/ O metodo expect trata se houver erro no resultado do metodo read_line
+        então, caso haja erro no resultado, será printado na tela a mensagem.
+        Observa-se também que essas 3 linhas de códigos é 1 "ação lógica", 
+        por exemplo, poderia ser escrito tudo junto: io::stdin().read_line(&mut guess).expect("Failed to read line");
+        mas fica mais legível separado em linhas distintas e com identação */
         .expect("Failed to read line");
 
+    // imprime o valor da variável guess    
     println!("You guessed: {guess}");
 }
