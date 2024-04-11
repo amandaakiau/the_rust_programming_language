@@ -35,5 +35,31 @@ fn main() {
 
     let spaces = "    ";
     let spaces = spaces.len();
-    println!("A quantidade de espaços é {spaces}.")
+    println!("A quantidade de espaços é {spaces}.");
+
+    // float and integer types 
+    let a = -2; // i32 is default (numeros positivos e negativos)
+    let b: u64 = 27; // explicit u64 (apenas numeros positivos - unsigned)
+    let w = 2.5; // f64 is default
+    let k: f32 = 3.5; // explicit f32
+
+    println!("Integer i32 type is {a} and u64 type is {b} ");
+    println!("Float f64 type is {w} and f32 type is {k} ");
+
+    // operações matematicas
+    let sum = 10 + 1;
+    let difference = 10 - 1;
+    let multiplication = 10 * 1;
+    let quotient = 10/2;
+    let truncated = -5/3; 
+    let remainder = 43 % 5; 
+
+    println!("Resultados: 
+            soma: {sum}, 
+            subtração: {difference},
+            multiplicação: {multiplication},
+            divisão: {quotient}, 
+            divisão com resultado inteiro: {truncated},
+            resto da divisão: {remainder}");
+
 }
