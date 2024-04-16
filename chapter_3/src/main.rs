@@ -93,5 +93,31 @@ fn main() {
     println!("O primeiro valor do array é {first}");
 
 
+    another_function(5);
+
+    let y = five();
+    println!("O valor de y é {y}");
+
 
 }
+
+
+fn another_function(x: i32) {
+    println!("O valor the x é: {x}");
+}
+
+
+ // uma função que retorna 5:
+ fn five() -> i32 {  // voce deve especificar o tipo do valor de retorno com -> 
+    5
+}
+
+/*/ para declarar uma função basta colocar fn e o nome da função em seguida (conforme acima), e se tiver parâmetros vc deve especificar os tipos
+Observa-se tbm que a função another_function foi declarada depois da função main, em rust nao importa se você declara antes ou depois da main*/ 
+
+/* -------------------- Statements and Expressions -----------------------
+
+Statements are instructions that perform some action and do not return a value.
+Expressions evaluate to a resultant value. Let’s look at some examples.
+ */
+
