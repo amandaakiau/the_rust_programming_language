@@ -46,7 +46,7 @@ fn main() {
     println!("Integer i32 type is {a} and u64 type is {b} ");
     println!("Float f64 type is {w} and f32 type is {k} ");
 
-    // operações matematicas
+    // numeric Operations
     let sum = 10 + 1;
     let difference = 10 - 1;
     let multiplication = 10 * 1;
@@ -62,8 +62,36 @@ fn main() {
             divisão com resultado inteiro: {truncated},
             resto da divisão: {remainder}");
 
-    // tipo booleano
+    // boolean type
     let t = true;
     let f: bool = false; // with explicit type annotation
+
+    // character type
+    // os tipo caracter deve ser representado com aspas simples, ao contrário das strings que sao representadas com aspas duplas
+    let c = 'z';
+    let z: char = 'ℤ'; // with explicit type annotation
+    let heart_eyed_cat = '😻';
+
+    // compound types: tuples and arrays
+
+    // tuples: possuem tamanho fixo
+    let tup = (500, 6.4, 1); // diferentes valores nas tuplas nao precisam ser do mesmo tipo
+    let (x, y, z) = tup; // isso aqui é chamado de "destructuring" pq quebra uma  tupla em três variáveis separadas x, y e z
+    let five_hundred = tup.0; // voce pode tbm especificar a posição do valor na tupla, neste caso estamos chamando o valor de posição 0 
+
+    // arrays: em rust eles tbm possuem tamanho fixo  
+    let a = [1, 2, 3, 4, 5]; // ao contrario das tuplas, os valores no array devem ser do mesmo tipo
+
+    /* Arrays are useful when you want your data allocated on the stack rather than the heap 
+    or when you want to ensure you always have a fixed number of elements. */
+
+    let a2 = [3; 5]; // voce pode inicializar um array que contem o mesmo valor em cada elemento especificando o valor e o tamanho do array
+    // ou seja, isso é o mesmo que a2 = [3, 3, 3, 3, 3]
+
+    // acessando valores em um array:
+    let first = a[0];
+    println!("O primeiro valor do array é {first}");
+
+
 
 }
