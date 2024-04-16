@@ -62,4 +62,8 @@ fn main() {
             divisão com resultado inteiro: {truncated},
             resto da divisão: {remainder}");
 
+    // tipo booleano
+    let t = true;
+    let f: bool = false; // with explicit type annotation
+
 }
