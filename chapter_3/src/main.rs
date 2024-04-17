@@ -92,12 +92,106 @@ fn main() {
     let first = a[0];
     println!("O primeiro valor do array é {first}");
 
+    // --------------- funções -----------------------------------------------
+    /*/ para declarar uma função basta colocar fn e o nome da função em seguida (conforme acima), e se tiver parâmetros vc deve especificar os tipos
+    Observa-se tbm que a função another_function foi declarada depois da função main, em rust nao importa se você declara antes ou depois da main*/ 
+
+    /* -------------------- Statements and Expressions -----------------------
+
+    Statements are instructions that perform some action and do not return a value.
+    Expressions evaluate to a resultant value. Let’s look at some examples.
+    */
+
 
     another_function(5);
 
     let y = five();
     println!("O valor de y é {y}");
 
+
+    // ------------------------ IF CONDITIONS ----------------------------------
+    /* "Using too many else if expressions can clutter your code, so if you have more than one, you might want to refactor your code. " */
+
+    let number =  6;
+
+    if number % 4 == 0 {
+        println!("O número é divisível por 4");
+    } else if number % 3  == 0 {
+        println!("O número é divisível por 3");
+    } else if number % 2 == 0 {
+        println!("O número é divisível por 2");
+    } else {
+        println!("O número não é divisível por 4, 3 ou 2.");
+    }
+
+    /* Using if in a let statement  */
+
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
+
+    println!("O valor do numero é: {number}");  
+
+    /* Loop */
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("O resultado é {result}");
+
+    /* Loop dentro de loop */
+    // você pode colocar rótulo em um loop quando estiver utilizando 2 loops, assim facilita para informar qual loop deve quebrar (break)
+
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+
+        count += 1;
+    }
+    println!("End count = {count}");
+
+
+    // ------------ WHILE ------------------------
+
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{number}!");
+
+        number -= 1;
+    }
+
+    println!("LIFTOFF!!!");
+
+    // utilizando for para percorrer todos os elementos de um array
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!("the value is: {element}");
+    }
+
+    // utilizando for com range
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
 
 }
 
@@ -112,12 +206,4 @@ fn another_function(x: i32) {
     5
 }
 
-/*/ para declarar uma função basta colocar fn e o nome da função em seguida (conforme acima), e se tiver parâmetros vc deve especificar os tipos
-Observa-se tbm que a função another_function foi declarada depois da função main, em rust nao importa se você declara antes ou depois da main*/ 
-
-/* -------------------- Statements and Expressions -----------------------
-
-Statements are instructions that perform some action and do not return a value.
-Expressions evaluate to a resultant value. Let’s look at some examples.
- */
 
