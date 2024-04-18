@@ -67,6 +67,13 @@ fn main() {
     println!("The length of '{}' is {}.", s2, len);
 
 
+    // Here is how you would define and use a calculate_length function that has a reference to an object as a parameter instead of taking ownership of the value:
+    let s1 = String::from("hello");
+
+    let len = calculate_length2(&s1);
+
+    println!("The length of '{}' is {}.", s1, len);
+
 
 } // Here, x goes out of scope, then s. But because s's value was moved, nothing
   // special happens.
@@ -87,3 +94,12 @@ fn calculate_length(s: String) -> (String, usize) {
 
     (s, length)
 }
+
+fn calculate_length2(s: &String) -> usize {  // s is a reference to a String
+    s.len()  
+}  // Here, s goes out of scope. But because it does not have ownership of what
+// it refers to, it is not dropped.
+
+// First, notice that all the tuple code in the variable declaration and the function return value is gone. 
+// Second, note that we pass &s1 into calculate_length and, in its definition, we take &String rather than String. 
+// These ampersands represent references, and they allow you to refer to some value without taking ownership of it.
